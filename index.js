@@ -76,8 +76,8 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(a,b) {
-  return a*b;
+function carpma(a, b) {
+  return a * b;
 }
 
 
@@ -130,7 +130,7 @@ let bilgisayar = situationArr[Math.round(Math.random() * 3)];
 
 function oyun(oyuncu, bilgisayar) {
 
-  if (oyuncu === "Taş" && bilgisayar === "Makas") {
+  /*if (oyuncu === "Taş" && bilgisayar === "Makas")   {
     return result;
   }
   else if (oyuncu === "Makas" && bilgisayar === "Kağıt") {
@@ -144,8 +144,17 @@ function oyun(oyuncu, bilgisayar) {
   }
   else {
     return result2;
+  }*/
+  if ((oyuncu === "Taş" && bilgisayar === "Makas") || (oyuncu === "Makas" && bilgisayar === "Kağıt") || (oyuncu === "Kağıt" && bilgisayar === "Taş"))
+  {
+    return result;
   }
-
+  else if (oyuncu === bilgisayar) {
+    return result3;
+  }
+  else {
+    return result2;
+  }
 }
 let lastResult = oyun(oyuncu, bilgisayar);
 console.log(lastResult);
@@ -220,23 +229,23 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  daha aşağıda 'F aldın'
  dönün
 */
-let sinavSonucu= 40;
+let sinavSonucu = 40;
 function notHesapla(sinavSonucu) {
-if(sinavSonucu >= 90 && sinavSonucu <=100){
-  return "A aldın";
-}
-else if(sinavSonucu >= 80 && sinavSonucu <=89){
-  return "B aldın";
- }
- else if(sinavSonucu >= 70 && sinavSonucu <=79){
-  return "C aldın";
- } 
- else if(sinavSonucu >= 60 && sinavSonucu <=69){
-  return "D aldın";
- }
- else if(sinavSonucu >= 0 && sinavSonucu <=59){
-  return "F aldın";
- }
+  if (sinavSonucu >= 90 && sinavSonucu <= 100) {
+    return "A aldın";
+  }
+  else if (sinavSonucu >= 80 && sinavSonucu <= 89) {
+    return "B aldın";
+  }
+  else if (sinavSonucu >= 70 && sinavSonucu <= 79) {
+    return "C aldın";
+  }
+  else if (sinavSonucu >= 60 && sinavSonucu <= 69) {
+    return "D aldın";
+  }
+  else if (sinavSonucu >= 0 && sinavSonucu <= 59) {
+    return "F aldın";
+  }
 }
 let examResult = notHesapla(sinavSonucu);
 console.log(examResult);
@@ -260,10 +269,8 @@ let nameWithLowerCase = name.toLowerCase();
 let nameArray = Array.from(nameWithLowerCase);
 let count = 0;
 function sesliHarfSayaci(nameWithLowerCase) {
-  for (let i=0; i<nameArray.length; i++)
-  {
-    if (nameArray[i] == "a" || nameArray[i] == "e" || nameArray[i] == "ı" ||nameArray[i] == "i" ||nameArray[i] == "o" || nameArray[i] == "ö" || nameArray[i] == "u" ||nameArray[i] == "ü" )
-    {
+  for (let i = 0; i < nameArray.length; i++) {
+    if (nameArray[i] == "a" || nameArray[i] == "e" || nameArray[i] == "ı" || nameArray[i] == "i" || nameArray[i] == "o" || nameArray[i] == "ö" || nameArray[i] == "u" || nameArray[i] == "ü") {
       count++;
     }
   }
