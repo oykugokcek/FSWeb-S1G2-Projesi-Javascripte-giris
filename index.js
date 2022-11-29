@@ -255,11 +255,22 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+let name = "Öykü Gökçek";
+let nameWithLowerCase = name.toLowerCase();
+let nameArray = Array.from(nameWithLowerCase);
+let count = 0;
+function sesliHarfSayaci(nameWithLowerCase) {
+  for (let i=0; i<nameArray.length; i++)
+  {
+    if (nameArray[i] == "a" || nameArray[i] == "e" || nameArray[i] == "ı" ||nameArray[i] == "i" ||nameArray[i] == "o" || nameArray[i] == "ö" || nameArray[i] == "u" ||nameArray[i] == "ü" )
+    {
+      count++;
+    }
+  }
+  return count;
 }
-
+count = sesliHarfSayaci(name);
+console.log(count);
 
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
